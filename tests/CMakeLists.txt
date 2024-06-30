@@ -327,6 +327,7 @@ add_legacy_tests(
   igraph_is_bipartite
   igraph_is_connected
   igraph_is_chordal
+  igraph_is_clique
   igraph_is_complete
   igraph_is_dag
   igraph_is_mutual
@@ -387,6 +388,7 @@ add_examples(
 
 add_legacy_tests(
   FOLDER tests/unit NAMES
+  igraph_biconnected_components
   igraph_bridges
   igraph_decompose_strong
   igraph_is_biconnected
@@ -1019,6 +1021,7 @@ add_benchmarks(
   igraph_voronoi
   inc_vs_adj
   lad
+  intersection
 )
 
 # dot product

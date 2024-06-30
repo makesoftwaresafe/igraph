@@ -191,8 +191,8 @@ static igraph_error_t igraph_i_kleinberg_weighted(igraph_real_t *to,
  * \param options Options to ARPACK. See \ref igraph_arpack_options_t
  *    for details. Supply \c NULL here to use the defaults. Note that the function
  *    overwrites the <code>n</code> (number of vertices) parameter and
- *    it always starts the calculation from a non-random vector
- *    calculated based on the degree of the vertices.
+ *    it always starts the calculation from a vector calculated based
+ *    on the degree of the vertices.
  * \return Error code.
  *
  * Time complexity: depends on the input graph, usually it is O(|V|),
@@ -289,7 +289,7 @@ igraph_error_t igraph_hub_and_authority_scores(const igraph_t *graph,
         options = igraph_arpack_options_get_default();
     }
 
-    options->n = no_of_nodes;
+    options->n = (int) no_of_nodes;
     options->start = 1;   /* no random start vector */
 
     IGRAPH_VECTOR_INIT_FINALLY(&values, 0);
